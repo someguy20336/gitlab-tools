@@ -1,0 +1,15 @@
+{
+ "manifest_version": 2,
+ "name": "Hide Resolved",
+ "version": "1.0.0",
+ "description": "Hide resolved threads in the GitLab history",
+ "short_name": "Hide Resolved",
+ "permissions": [],
+ "content_scripts": [
+   {
+     "matches": ["https://*/*/-/merge_requests/*"],
+     "css": ["main.css"],
+     "js": ["main.js"]
+   }
+ ]
+}

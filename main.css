@@ -1,0 +1,12 @@
+.hide-resolved .hf-resolved {
+	display: none !important;
+}
+
+#show-resolved-threads {
+	margin-right: .4rem;
+}
+
+#show-resolved-threads + label {
+	margin-bottom: 0 !important;
+	font-weight: 400;
+}
