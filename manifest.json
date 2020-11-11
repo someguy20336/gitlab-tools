@@ -1,9 +1,9 @@
 {
  "manifest_version": 2,
- "name": "Hide Resolved",
+ "name": "GitLab Tools",
  "version": "1.0.0",
- "description": "Hide resolved threads in the GitLab history",
- "short_name": "Hide Resolved",
+ "description": "Useful efficiency tools for working with GitLab",
+ "short_name": "GitLab Tools",
  "permissions": [],
  "content_scripts": [
    {
