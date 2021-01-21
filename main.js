@@ -26,13 +26,20 @@ let hideResolvedMain = () => {
 		let cnt = 0;
 		updateClasses = updateClasses ?? true;
 		for (let oneNote of notes) {
-			let resolved = oneNote.querySelector(".discussion-resolved-text");
-			if (resolved !== null) {
-				cnt++;
+			let headline = oneNote.querySelector(".js-discussion-headline");
+			let isResolved = false;
+
+			// Actually seems like the presence of this is good, but lets just check text
+			// just in case
+			if (headline !== null) {
+				if (headline.textContent.trim().startsWith("Resolved")) {
+					cnt++;
+					isResolved = true;
+				}
 			}
 			
 			if (updateClasses) {
-				oneNote.classList.toggle("hf-resolved", resolved !== null);
+				oneNote.classList.toggle("hf-resolved", isResolved);
 			}
 		}
 		
