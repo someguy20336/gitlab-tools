@@ -47,13 +47,30 @@ let hideResolvedMain = () => {
 		logDebug(`Found ${cnt} resolved discussions`);
 	};	
 
+	let failureCount = 0;
 	let updateResolvedCnt = (cnt) => {
 
+		logDebug("Adding resolved count button");
 		if (lblToggleResolve.parentElement !== null) {
 			let resolveCntContainer = document.querySelector(".line-resolve-all-container");
 
 			if (resolveCntContainer !== null) {
 				resolveCntContainer.prepend(toggleContainer);
+				logDebug("Found container and appended button");
+				failureCount = 0;
+			} else {				
+				logDebug("Failed to find container for show resolved toggle");
+				failureCount++;
+
+				if (failureCount < 10) {
+					logDebug("Trying again in 1 second");
+					setTimeout(() => {
+						updateResolvedCnt(cnt);
+					}, 1000);
+				} else {					
+					logDebug("Failed too many times");
+				}
+			
 			}
 		}
 
