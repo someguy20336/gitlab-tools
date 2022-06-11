@@ -52,7 +52,9 @@ let hideResolvedMain = () => {
 
 		logDebug("Adding resolved count button");
 		if (lblToggleResolve.parentElement !== null) {
-			let resolveCntContainer = document.querySelector(".line-resolve-all-container");
+			// Find the element to inject the "Show X Resolved" next to
+			// This is the element as of GitLab 15.
+			let resolveCntContainer = document.querySelector(".discussions-counter");
 
 			if (resolveCntContainer !== null) {
 				resolveCntContainer.prepend(toggleContainer);
@@ -95,7 +97,7 @@ let hideResolvedMain = () => {
 
 	// ToggleContainer
 	let toggleContainer = document.createElement("div");
-	toggleContainer.classList.add("line-resolve-all");
+	toggleContainer.classList.add("line-resolve-all", "gl-display-flex", "gl-align-items-center", "gl-pl-4", "gl-rounded-base", "gl-mr-3", "gl-bg-gray-50", "gl-pr-4");
 	toggleContainer.appendChild(chkToggleResolve);
 	toggleContainer.appendChild(lblToggleResolve);
 	
