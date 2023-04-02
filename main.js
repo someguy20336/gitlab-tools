@@ -1,6 +1,6 @@
 
 // Logs a debug message
-let debug = true; // false;
+let debug = false;
 let logDebug = (msg) => {	
 	if (debug) {
 		console.log(msg);
