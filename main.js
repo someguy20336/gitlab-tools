@@ -103,7 +103,12 @@ let hideResolvedMain = () => {
 	
 	logDebug("Found notes-list");
 
-	toggleState();  // starts in "hidden" state
+	if (location.hash.includes("note_")) {
+		chkToggleResolve.checked = true;
+		findResolved(true);
+	} else {
+		toggleState();  // starts in "hidden" state
+	}
 
 	// Options for the observer (which mutations to observe)
 	const config = { childList: true };
