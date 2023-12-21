@@ -1,6 +1,5 @@
 # gitlab-tools
 
-## Hiding resolved discussions
+This respiratory moved to GitLab, which probably makes more sense.  Find it here:
 
-This extensions automatically hides resolved discussion and allows you to toggle them via a checkbox next to the unresolved discussion count.  Would put a screenshot here, but github doesn't appear to be liking that.
-
+https://gitlab.com/someguy20336/gitlab-tools
